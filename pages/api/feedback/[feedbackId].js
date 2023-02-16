@@ -1,4 +1,4 @@
-import { extractFeedback, buildFeedbackPath } from "./feedback";
+import { extractFeedback, buildFeedbackPath } from "./index";
 
 const handler = (req, res) => {
   const { feedbackId } = req.query;
