@@ -1,7 +1,27 @@
+import { useRef } from "react";
+
 function HomePage() {
+  const emailInputRef = useRef();
+  const feedbackInputRef = useRef();
+  const submitFormHandler = (e) => {
+    e.preventDefault();
+    const enteredEmail = emailInputRef.current.value;
+    const enteredFeedback = feedbackInputRef.current.value;
+  };
   return (
     <div>
       <h1>The Home Page</h1>
+      <form onSubmit={submitFormHandler}>
+        <div>
+          <label htmlFor="email">Your Email Address</label>
+          <input type="email" id="email" />
+        </div>
+        <div>
+          <label htmlFor="feedback">Your Feedback </label>
+          <textarea type="text" id="feedback" rows={5}></textarea>
+        </div>
+        <button>Send Feedback</button>
+      </form>
     </div>
   );
 }
